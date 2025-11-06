@@ -1,0 +1,95 @@
+# --- WMC/WMS Animation Ad Script Data File ---
+
+def get_wmc_wms_ad_script() -> dict:
+    """
+    Returns the complete, structured script for the WMC/WMS Water Magic Show
+    animated advertisement.
+
+    Metadata includes:
+    - Title: Ad For WMC/WMS (The Water Magic Show - Live Theater Edition)
+    - Style: Energetic, Fast-Paced
+    - Goal: Find Local Showtime and Attend Live!
+    - Location: New Delhi, India
+    """
+
+    # --- Ad Scene Breakdown (5 Scenes) ---
+    scene_breakdown = [
+        {
+            "SCENE": 1,
+            "VISUALS": "A dull, gray animation of a complex molecule spinning slowly in a void. Textbooks are visible in the background.",
+            "VOICEOVER": "Tired of confusing textbooks and boring lectures?",
+            "SFX_MUSIC": "Slow, monotonous, continuous beeping noise."
+        },
+        {
+            "SCENE": 2,
+            "VISUALS": "SUDDEN BURST OF COLOR! The gray molecule is instantly replaced by a vibrant, cartoon explosion effect (like a lab flask bubbling over with rainbow colors).",
+            "VOICEOVER": "Get ready to explode the classroom!",
+            "SFX_MUSIC": "WHOOSH and PING! sound effects, music track starts."
+        },
+        {
+            "SCENE": 3,
+            "VISUALS": "Fast-paced montage: Quick cuts of different, surprising water-based experiments (e.g., non-Newtonian fluid splash, colorful ice reactions, water bending with sound).",
+            "VOICEOVER": "We’re bringing you a new batch of random experiments and spectacular water magic every time! No two shows are ever the same!",
+            "SFX_MUSIC": "Upbeat, driving background music continues."
+        },
+        {
+            "SCENE": 4,
+            "VISUALS": "The screen centers on the bright, bold logo: WMC/WMS! Animated bubbles and flowing water effects surround the Red Blue Purple Brown Logo.",
+            "VOICEOVER": "This is the WMC/WMS Water Magic Show—live and unpredictable!",
+            "SFX_MUSIC": "A dramatic musical sting hits with the logo reveal."
+        },
+        {
+            "SCENE": 5,
+            "VISUALS": "The Call-to-Action (CTA) text (LIVE!) flashes brightly across the screen. Animated spotlights hit a graphic of the India Gate or a famous New Delhi landmark. The website scrolls below.",
+            "VOICEOVER": "It's happening live, right now, at a theater near you in New Delhi, India! Go online and get your tickets before the next random experiment begins!",
+            "SFX_MUSIC": "Music fades quickly to silence."
+        },
+    ]
+
+    # --- Call To Action Overlay Data ---
+    cta_data = {
+        "LINE_1": "LIVE!",
+        "LINE_2": "WMC/WMS - New Delhi Theaters Only",
+        "LINE_3": "Check Local Listings for Random Showtimes!",
+        "TOOL_LINK_TEXT": "If You Want To Use Our Tools Visit Our Website At:",
+        "TOOL_LINK_URL": "https://saahirtsharma-hub.github.io/DB8-Worker-Help/#f"
+    }
+
+    # --- Final Production Dictionary ---
+    production_data = {
+        "metadata": {
+            "title": "Add For WMC/WMS (The Water Magic Show - Live Theater Edition)",
+            "style": "Energetic, Fast-Paced",
+            "length": "Approx. 15-20 seconds",
+            "goal": "Find Local Showtime and Attend Live!",
+            "location": "New Delhi, India"
+        },
+        "scenes": scene_breakdown,
+        "cta_overlay": cta_data
+    }
+
+    return production_data
+
+# --- Execution Block ---
+if __name__ == "__main__":
+    ad_data = get_wmc_wms_ad_script()
+
+    print("--- WMC/WMS AD SCRIPT PRODUCTION REPORT ---")
+    print(f"TITLE: {ad_data['metadata']['title']}")
+    print(f"STYLE: {ad_data['metadata']['style']}")
+    print(f"LOCATION: {ad_data['metadata']['location']}")
+    print("-" * 40)
+    print("## SCENE BREAKDOWN")
+    for scene in ad_data['scenes']:
+        print(f"\n[SCENE {scene['SCENE']}]")
+        print(f"  VISUALS: {scene['VISUALS']}")
+        print(f"  VOICEOVER: \"{scene['VOICEOVER']}\"")
+        print(f"  SFX/MUSIC: {scene['SFX_MUSIC']}")
+
+    print("-" * 40)
+    print("## CALL TO ACTION OVERLAY")
+    cta = ad_data['cta_overlay']
+    print(f"  LINE 1: {cta['LINE_1']}")
+    print(f"  LINE 2: {cta['LINE_2']}")
+    print(f"  LINE 3: {cta['LINE_3']}")
+    print(f"  LINK: {cta['TOOL_LINK_TEXT']} {cta['TOOL_LINK_URL']}")
